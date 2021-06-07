@@ -9,6 +9,7 @@ import { getEmployees } from "../../redux/global/selectors"
 const View = () => {
   const history = useHistory();
   const rowData = useSelector(getEmployees);
+  const columns = Object.keys(rowData[0])
 
   return (
     <>
@@ -18,13 +19,17 @@ const View = () => {
           <div className="ag-theme-alpine" style={{ height: 400, width: '100vw' }}>
             <AgGridReact
               rowData={rowData}>
-              <AgGridColumn field="id"></AgGridColumn>
-              <AgGridColumn field="firstName"></AgGridColumn>
-              <AgGridColumn field="surname"></AgGridColumn>
-              <AgGridColumn field="email"></AgGridColumn>
-              <AgGridColumn field="age"></AgGridColumn>
-              <AgGridColumn field="jobTitle"></AgGridColumn>
-              <AgGridColumn field="status"></AgGridColumn>
+              {columns.map(column =>
+                <AgGridColumn
+                  key={column}
+                  field={column}
+                  sortable
+                  filter
+                  onCellValueChanged={(e) => console.log('value', e)}
+                  editable={column !== 'id'}
+                  singleClickEdit
+                >
+                </AgGridColumn>)}
             </AgGridReact>
           </div>
 
