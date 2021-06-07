@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Flex, Header } from "../styled";
 import FormField from "./FormField";
 import FormButtons from "./FormButtons";
+import FormDropdown from "./FormDropdown";
 import formValidationSchema from "./formValidationSchema";
 import { saveNewEmployee } from "../../redux/employees/actionCreators";
 
@@ -37,7 +38,7 @@ const Create = () => {
             <FormField name="surname" placeholder="Surname" />
             <FormField name="email" placeholder="Email" />
             <FormField name="age" placeholder="Age" />
-            <FormField name="status" placeholder="Status" />
+            <FormDropdown name="status" placeholder="-" />
             <FormField name="jobTitle" placeholder="JobTitle" />
             <FormButtons />
           </Flex>

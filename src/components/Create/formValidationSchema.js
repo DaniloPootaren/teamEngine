@@ -23,11 +23,7 @@ const formValidationSchema = yup.object().shape({
     .max(85, "Sorry you are too old.")
     .required("Required"),
   status: yup
-    .mixed()
-    .oneOf(
-      ["Married", "Single", "Not disclosed"],
-      " You should either be Married, Single or Not disclosed "
-    )
+    .string()
     .required("Required"),
   jobTitle: yup
     .string()

@@ -1,6 +1,8 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import WebFont from "webfontloader";
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import Overview from "../Overview";
 import Create from "../Create";
 import View from "../View";
