@@ -23,7 +23,7 @@ const employeeSlice = createSlice({
         payload: { ...employee, id: new Date().getTime() },
       }),
       reducer(draftState, action) {
-        draftState.employees_records = [action.payload];
+        draftState.employees_records = draftState.employees_records.concat([action.payload]);
       },
     },
   },
