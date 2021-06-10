@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import { useHistory } from "react-router";
-import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { Box, Button, Flex, Header } from "../styled";
 
 import { getEmployees } from "../../redux/global/selectors"
@@ -17,20 +16,7 @@ const View = () => {
       <Flex direction="column" alignItems="center" justifyContent="center" marginTop="lg">
         <Box>
           <div className="ag-theme-alpine" style={{ height: 400, width: '100vw' }}>
-            <AgGridReact
-              rowData={rowData}>
-              {columns.map(column =>
-                <AgGridColumn
-                  key={column}
-                  field={column}
-                  sortable
-                  filter
-                  onCellValueChanged={(e) => console.log('value', e)}
-                  editable={column !== 'id'}
-                  singleClickEdit
-                >
-                </AgGridColumn>)}
-            </AgGridReact>
+
           </div>
 
         </Box>
