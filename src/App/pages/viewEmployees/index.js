@@ -15,7 +15,7 @@ const ViewEmployees = () => {
       <Header data-cy="header">View Employees</Header>
       <Flex direction="column" alignItems="center" justifyContent="center" marginTop="lg">
         <Box>
-          {employees.map(employee => <Card employee={employee} />)}
+          {employees.map(employee => <Card key={employee.id} employee={employee} />)}
         </Box>
         <Box>
           <Button data-cy="backButton" onClick={() => history.goBack()}>
