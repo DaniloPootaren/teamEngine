@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakpoint from 'styled-components-breakpoint';
 import theme from "./defaultTheme";
 
 const AppWrapper = styled.div`
@@ -13,6 +14,11 @@ const AppWrapper = styled.div`
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+
+  ${breakpoint('mobile', 'tablet')`
+      width: auto;
+      height: 100%;
+      `}
 `;
 
 export default AppWrapper;
