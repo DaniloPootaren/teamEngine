@@ -10,6 +10,7 @@ import { editEmployeeDetails, deleteEmployee } from "../../../../redux/employees
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Pill from "../styled/Pill";
+import { firstLetterCapital, removeUnderScores } from "../../../utils/text"
 
 
 
@@ -49,14 +50,14 @@ const Card = (props) => {
             </Flex>
             {fields.map(field =>
                 <span key={field}>
-                    <strong>{`${field}: `}</strong>{employee[field]}<br />
+                    <strong>{`${firstLetterCapital(field)}: `}</strong>{employee[field]}<br />
                 </span>)}
             <Flex alignItems="center" justifyContent="space-between">
                 <span>
                     <strong>Job Title:</strong>{` ${employee.jobTitle}`}<br />
                 </span>
                 <Pill status={employee.status}>
-                    {employee.status}
+                    {removeUnderScores(employee.status)}
                 </Pill>
             </Flex>
             {showEditDialog && <Dialog
