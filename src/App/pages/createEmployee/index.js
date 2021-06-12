@@ -21,7 +21,7 @@ const CreateEmployee = () => {
 
   return (
     <>
-      <Header>CreateEmployee new employee</Header>
+      <Header>Create new employee</Header>
       <CreateEmployeeForm handleSubmit={submitForm} cancelLabel="Back" handleCancel={handleBackButton} />
     </>
   );

@@ -1,10 +1,14 @@
 import React, { useState, useCallback } from "react";
 import { useDispatch } from "react-redux"
 import Container from "../styled/Container"
-import { Button, Flex, } from "../../../components/styled";
+import ButtonGroup from "../styled/ButtonGroup"
+import { Flex } from "../../../components/styled";
+import theme from "../../../components/styled/defaultTheme"
 import Dialog from "../../../components/Dialog"
 import EditForm from "../../../components/Forms/CreateEmployee"
 import { editEmployeeDetails, deleteEmployee } from "../../../../redux/employees/actionCreators";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -34,10 +38,13 @@ const Card = (props) => {
     return (
         <Container  >
             <Flex alignItems="center" justifyContent="space-between">
-                <div><h3>{employee.id}</h3></div>
-                <Button data-cy="backButton" onClick={() => setShowEditDialog(!showEditDialog)}>
-                    Edit
-                </Button>
+                <div>
+                    <h3>{employee.id}</h3>
+                </div>
+                <ButtonGroup >
+                    <FontAwesomeIcon size="2x" color={theme.colors.gray} onClick={() => setShowEditDialog(!showEditDialog)} icon={faEdit} />
+                    <FontAwesomeIcon size="2x" color={theme.colors.gray} icon={faTrash} onClick={() => handleDelete(employee)} />
+                </ButtonGroup>
             </Flex>
             {fields.map(field =>
                 <span key={field}>
@@ -57,7 +64,8 @@ const Card = (props) => {
                         handleCancel={() => setShowEditDialog(false)}
                         handleSubmit={submitForm}
                         cancelLabel="Cancel" />}
-            />}
+            />
+            }
         </Container>
     );
 };

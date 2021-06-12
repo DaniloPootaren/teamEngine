@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import * as _ from "lodash"
+
 
 const defaultEmployee = {
   id: new Date().getTime(),
@@ -35,7 +35,7 @@ const employeeSlice = createSlice({
     },
     deleteEmployee: {
       reducer(draftState, action) {
-        const newEmployeeRecords = _.remove(draftState.employees_records, obj => draftState.employees_records.indexOf(obj.id) !== action.payload.id)
+        const newEmployeeRecords = draftState.employees_records.filter(emp => emp.id !== action.payload.id)
         draftState.employees_records = newEmployeeRecords;
       },
     },
