@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { useDispatch } from "react-redux"
 import Container from "../styled/Container"
 import { Button, Flex, } from "../../../components/styled";
 import Dialog from "../../../components/Dialog"
 import EditForm from "../../../components/Forms/CreateEmployee"
+import { editEmployeeDetails, deleteEmployee } from "../../../../redux/employees/actionCreators";
 
 
 
@@ -13,8 +15,24 @@ const Card = (props) => {
     const { employee } = props
     const fields = ['firstName', 'surname', 'email', 'age']
 
+    const dispatch = useDispatch();
+
+    const submitForm = useCallback(
+        employee => {
+            dispatch(editEmployeeDetails(employee));
+        },
+        [dispatch]
+    );
+
+    const handleDelete = useCallback(
+        employee => {
+            dispatch(deleteEmployee(employee));
+        },
+        [dispatch]
+    );
+
     return (
-        <Container >
+        <Container  >
             <Flex alignItems="center" justifyContent="space-between">
                 <div><h3>{employee.id}</h3></div>
                 <Button data-cy="backButton" onClick={() => setShowEditDialog(!showEditDialog)}>
@@ -37,6 +55,7 @@ const Card = (props) => {
                     <EditForm
                         initialState={employee}
                         handleCancel={() => setShowEditDialog(false)}
+                        handleSubmit={submitForm}
                         cancelLabel="Cancel" />}
             />}
         </Container>

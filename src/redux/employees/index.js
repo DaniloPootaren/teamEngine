@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import * as _ from "lodash"
 
 const defaultEmployee = {
   id: new Date().getTime(),
@@ -26,9 +27,21 @@ const employeeSlice = createSlice({
         draftState.employees_records = draftState.employees_records.concat([action.payload]);
       },
     },
+    editEmployeeDetails: {
+      reducer(draftState, action) {
+        draftState.employees_records = draftState.employees_records.map(emp => emp.id === action.payload.id ? action.payload : emp)
+          ;
+      },
+    },
+    deleteEmployee: {
+      reducer(draftState, action) {
+        const newEmployeeRecords = _.remove(draftState.employees_records, obj => draftState.employees_records.indexOf(obj.id) !== action.payload.id)
+        draftState.employees_records = newEmployeeRecords;
+      },
+    },
   },
 });
 
-export const { saveNewEmployee } = employeeSlice.actions;
+export const { saveNewEmployee, editEmployeeDetails, deleteEmployee } = employeeSlice.actions;
 
 export default employeeSlice.reducer;

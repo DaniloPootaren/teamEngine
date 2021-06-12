@@ -4,3 +4,12 @@ import * as actions from ".";
 export const saveNewEmployee = employee => dispatch => {
   dispatch(actions.saveNewEmployee(employee));
 };
+
+export const editEmployeeDetails = employee => dispatch => {
+  dispatch(actions.editEmployeeDetails(employee));
+};
+
+export const deleteEmployee = employee => dispatch => {
+  dispatch(actions.deleteEmployee(employee));
+};
+
