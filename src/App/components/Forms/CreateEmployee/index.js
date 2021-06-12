@@ -8,7 +8,7 @@ import employeeValidationSchema from "./schema";
 
 
 const CreateEmployee = (props) => {
-    const { handleSubmit, initialState } = props
+    const { handleSubmit, initialState, handleCancel, cancelLabel } = props
     const defaultVal = {
         firstName: "",
         surname: "",
@@ -33,7 +33,7 @@ const CreateEmployee = (props) => {
                         <FormField name="age" placeholder="Age" />
                         <FormDropdown name="status" placeholder="-" />
                         <FormField name="jobTitle" placeholder="JobTitle" />
-                        <FormButtons />
+                        <FormButtons handleCancel={handleCancel} cancelLabel={cancelLabel} />
                     </Flex>
                 </Flex>
             </Formik>

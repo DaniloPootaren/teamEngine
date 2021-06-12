@@ -1,24 +1,24 @@
 import React from "react";
-import { useHistory } from "react-router";
+
 import { useFormikContext } from "formik";
 import * as _ from "lodash"
 import { Box, Button, Flex } from "../../styled";
 
 
-const FormButtons = () => {
+const FormButtons = (props) => {
   const { handleSubmit, errors } = useFormikContext();
-  const history = useHistory();
+  const { handleCancel, cancelLabel } = props;
   const disableSave = !_.isEmpty(errors)
 
   return (
     <Flex justifyContent="center">
       <Box marginRight="sm">
-        <Button data-cy="backButton" onClick={() => history.goBack()}>
-          Back
+        <Button data-cy="backButton" onClick={handleCancel}>
+          {cancelLabel}
         </Button>
       </Box>
       <Box>
-        <Button data-cy="saveButton" onClick={handleSubmit} disabled={disableSave} type="submit">
+        <Button secondary data-cy="saveButton" onClick={handleSubmit} disabled={disableSave} type="submit">
           Save
         </Button>
       </Box>

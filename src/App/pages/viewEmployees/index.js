@@ -5,6 +5,7 @@ import { Box, Button, Flex, Header } from "../../components/styled";
 import Card from "./components/Card"
 import { getEmployees } from "../../../redux/global/selectors"
 
+
 const ViewEmployees = () => {
   const history = useHistory();
   const employees = useSelector(getEmployees);
