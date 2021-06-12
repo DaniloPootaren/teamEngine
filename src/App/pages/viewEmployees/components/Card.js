@@ -1,14 +1,15 @@
 import React, { useState, useCallback } from "react";
-import { useDispatch } from "react-redux"
-import Container from "../styled/Container"
-import ButtonGroup from "../styled/ButtonGroup"
+import { useDispatch } from "react-redux";
+import Container from "../styled/Container";
+import ButtonGroup from "../styled/ButtonGroup";
 import { Flex } from "../../../components/styled";
-import theme from "../../../components/styled/defaultTheme"
-import Dialog from "../../../components/Dialog"
-import EditForm from "../../../components/Forms/CreateEmployee"
+import theme from "../../../components/styled/defaultTheme";
+import Dialog from "../../../components/Dialog";
+import EditForm from "../../../components/Forms/CreateEmployee";
 import { editEmployeeDetails, deleteEmployee } from "../../../../redux/employees/actionCreators";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import Pill from "../styled/Pill";
 
 
 
@@ -54,7 +55,9 @@ const Card = (props) => {
                 <span>
                     <strong>Job Title:</strong>{` ${employee.jobTitle}`}<br />
                 </span>
-                <div>{employee.status}</div>
+                <Pill status={employee.status}>
+                    {employee.status}
+                </Pill>
             </Flex>
             {showEditDialog && <Dialog
                 header="Edit employee details"
