@@ -1,5 +1,6 @@
 import React from "react";
 import { HashRouter as Router } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import WebFont from "webfontloader";
 import { AppWrapper, GlobalStyle } from "../App/components/styled";
 import Routes from "../App/routes"
@@ -13,6 +14,7 @@ WebFont.load({
 const App = () => {
   return (
     <Router>
+      <ToastContainer />
       <AppWrapper>
         <Routes />
       </AppWrapper>

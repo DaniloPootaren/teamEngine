@@ -6,9 +6,14 @@ import { Box, Button, Flex } from "../../styled";
 
 
 const FormButtons = (props) => {
-  const { handleSubmit, errors } = useFormikContext();
+  const { handleSubmit, errors, resetForm } = useFormikContext();
   const { handleCancel, cancelLabel } = props;
   const disableSave = !_.isEmpty(errors)
+
+  const handleSave = () => {
+    handleSubmit();
+    setTimeout(() => resetForm(), 1000)
+  }
 
   return (
     <Flex justifyContent="center">
@@ -18,7 +23,7 @@ const FormButtons = (props) => {
         </Button>
       </Box>
       <Box>
-        <Button secondary data-cy="saveButton" onClick={handleSubmit} disabled={disableSave} type="submit">
+        <Button secondary data-cy="saveButton" onClick={() => handleSave()} disabled={disableSave} type="submit">
           Save
         </Button>
       </Box>

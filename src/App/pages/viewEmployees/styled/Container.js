@@ -13,8 +13,8 @@ const Container = styled(Flex)`
   padding: 1em 2em 1em 2em;
   margin-bottom: 1em;
   &:hover {
-    -webkit-box-shadow: 5px 5px 15px 5px ${theme.colors.gray}; 
-     box-shadow: 5px 5px 15px 5px ${theme.colors.gray}; 
+    -webkit-box-shadow: 5px 5px 25px 5px ${theme.colors.gray}; 
+     box-shadow: 5px 5px 25px 5px ${theme.colors.gray}; 
   }
 
   ${breakpoint('mobile', 'tablet')`
