@@ -20,7 +20,7 @@ const Card = (props) => {
                     {!showActionButton ? 'Edit' : 'Cancel'}
                 </Button>
             </Flex>
-            {fields.map(field => <span><strong>{`${field}: `}</strong>{employee[field]}<br /></span>)}
+            {fields.map(field => <span key={field}><strong>{`${field}: `}</strong>{employee[field]}<br /></span>)}
             <Flex alignItems="center" justifyContent="space-between">
                 <span><strong>Job Title:</strong>{` ${employee.jobTitle}`}<br /></span>
                 <div>{employee.status}</div>
