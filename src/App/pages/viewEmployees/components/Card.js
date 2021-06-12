@@ -26,6 +26,7 @@ const Card = (props) => {
     const submitForm = useCallback(
         employee => {
             dispatch(editEmployeeDetails(employee));
+            setShowEditDialog(false)
         },
         [dispatch]
     );
