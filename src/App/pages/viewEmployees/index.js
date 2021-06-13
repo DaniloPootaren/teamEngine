@@ -15,7 +15,7 @@ const ViewEmployees = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const employees = useSelector(getEmployees);
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(0);
 
   const loadMore = () => {
     setPageNumber(pageNumber + 1)
