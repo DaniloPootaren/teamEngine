@@ -20,6 +20,7 @@ export const deleteEmployee = employee => dispatch => {
 
 export const loadEmployees = employees => dispatch => {
   dispatch(actions.loadMoreEmp(employees));
+  toast("Data fetched successfully...", { type: "info" })
 };
 
 
