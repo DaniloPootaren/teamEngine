@@ -17,6 +17,7 @@ const FormDropdown = ({ name, placeholder }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 style={{ display: 'block' }}
+                data-cy="statusInput"
             >
                 <option value="" disabled >{placeholder}</option>
                 {statuses.map(status => <option key={status} value={status} label={transformText(status)} />)}

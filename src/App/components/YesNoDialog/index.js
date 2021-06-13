@@ -25,7 +25,7 @@ const YesNoDialog = (props) => {
                     <FontAwesomeIcon size="4x" color={theme.colors.gray} icon={faInfoCircle} />
                     <h4>This action cannot be undone.</h4>
                     <ActionButtons>
-                        <Button onClick={onConfirm} secondary>Yes</Button>
+                        <Button data-cy="deleteEmployee" onClick={onConfirm} secondary>Yes</Button>
                         <Button onClick={onCancel}>No</Button>
                     </ActionButtons>
                 </Flex>

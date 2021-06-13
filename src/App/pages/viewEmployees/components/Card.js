@@ -47,8 +47,8 @@ const Card = (props) => {
                     <h3>{employee.id}</h3>
                 </div>
                 <ButtonGroup >
-                    <FontAwesomeIcon size="2x" color={theme.colors.gray} onClick={() => setShowEditDialog(true)} icon={faEdit} />
-                    <FontAwesomeIcon size="2x" color={theme.colors.gray} icon={faTrash} onClick={() => setShowDeleteDialog(true)} />
+                    <FontAwesomeIcon data-cy="editEmployeeDialog" size="2x" color={theme.colors.gray} onClick={() => setShowEditDialog(true)} icon={faEdit} />
+                    <FontAwesomeIcon data-cy="deleteEmployeeDialog" size="2x" color={theme.colors.gray} icon={faTrash} onClick={() => setShowDeleteDialog(true)} />
                 </ButtonGroup>
             </Flex>
             {fields.map(field =>
