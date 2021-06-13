@@ -18,3 +18,8 @@ export const deleteEmployee = employee => dispatch => {
   toast("Employee deleted.", { type: "success" })
 };
 
+export const loadEmployees = employees => dispatch => {
+  dispatch(actions.loadMoreEmp(employees));
+};
+
+

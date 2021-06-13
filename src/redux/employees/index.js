@@ -39,9 +39,15 @@ const employeeSlice = createSlice({
         draftState.employees_records = newEmployeeRecords;
       },
     },
+    /* Note that this should be done via saveNewEmployee, but since there is no backend here is what I did lol */
+    loadMoreEmp: {
+      reducer(draftState, action) {
+        draftState.employees_records = draftState.employees_records.concat(action.payload);
+      },
+    },
   },
 });
 
-export const { saveNewEmployee, editEmployeeDetails, deleteEmployee } = employeeSlice.actions;
+export const { saveNewEmployee, editEmployeeDetails, deleteEmployee, loadMoreEmp } = employeeSlice.actions;
 
 export default employeeSlice.reducer;
