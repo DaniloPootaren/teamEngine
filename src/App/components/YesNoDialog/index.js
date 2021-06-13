@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import theme from "../styled/defaultTheme";
 import Dialog from '../Dialog'
-import { Flex, Button, Box } from "../../components/styled";
+import { Flex, Button } from "../../components/styled";
 import ActionButtons from "./styled/ActionButtons"
 
 
