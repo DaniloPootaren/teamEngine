@@ -10,6 +10,7 @@ import { editEmployeeDetails, deleteEmployee } from "../../../../redux/employees
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Pill from "../styled/Pill";
+import YesNoDialog from "../../../components/YesNoDialog"
 import { firstLetterCapital, removeUnderScores } from "../../../utils/text"
 
 
@@ -18,6 +19,7 @@ import { firstLetterCapital, removeUnderScores } from "../../../utils/text"
 const Card = (props) => {
     // eslint-disable-next-line no-use-before-define
     const [showEditDialog, setShowEditDialog] = useState(false);
+    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const { employee } = props
     const fields = ['firstName', 'surname', 'email', 'age']
 
@@ -45,8 +47,8 @@ const Card = (props) => {
                     <h3>{employee.id}</h3>
                 </div>
                 <ButtonGroup >
-                    <FontAwesomeIcon size="2x" color={theme.colors.gray} onClick={() => setShowEditDialog(!showEditDialog)} icon={faEdit} />
-                    <FontAwesomeIcon size="2x" color={theme.colors.gray} icon={faTrash} onClick={() => handleDelete(employee)} />
+                    <FontAwesomeIcon size="2x" color={theme.colors.gray} onClick={() => setShowEditDialog(true)} icon={faEdit} />
+                    <FontAwesomeIcon size="2x" color={theme.colors.gray} icon={faTrash} onClick={() => setShowDeleteDialog(true)} />
                 </ButtonGroup>
             </Flex>
             {fields.map(field =>
@@ -71,6 +73,11 @@ const Card = (props) => {
                         cancelLabel="Cancel" />}
             />
             }
+            {showDeleteDialog &&
+                <YesNoDialog
+                    onConfirm={() => handleDelete(employee)}
+                    onCancel={() => setShowDeleteDialog(false)}
+                />}
         </Container>
     );
 };
