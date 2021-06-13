@@ -1,17 +1,13 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import { Flex } from "../../components/styled";
-import { ContentContainer, Dialog, DialogOverlay, HeaderContainer } from "./styled"
-
-
-
+import { ContentContainer, Dialog, DialogOverlay, HeaderContainer } from "./styled";
 
 const DialogComponent = (props) => {
     const {
         header,
         children,
     } = props
-
 
     return ReactDOM.createPortal(
         < DialogOverlay >

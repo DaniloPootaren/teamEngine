@@ -1,7 +1,6 @@
 import React from "react";
-
 import { useFormikContext } from "formik";
-import * as _ from "lodash"
+import * as _ from "lodash";
 import { Box, Button, Flex } from "../../styled";
 
 
@@ -9,7 +8,6 @@ const FormButtons = (props) => {
   const { handleSubmit, errors, resetForm } = useFormikContext();
   const { handleCancel, cancelLabel } = props;
   const disableSave = !_.isEmpty(errors)
-
   const handleSave = () => {
     handleSubmit();
     setTimeout(() => resetForm(), 1000)

@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "./styled/Container"
+import Container from "./styled/Container";
 
 const InfiniteScroller = (props) => {
     const { children, callback } = props
@@ -7,7 +7,6 @@ const InfiniteScroller = (props) => {
 
     const handleScroll = (e) => {
         const element = e.target;
-
         if (element.scrollHeight - element.scrollTop <= element.clientHeight + offset) {
             callback();
         }

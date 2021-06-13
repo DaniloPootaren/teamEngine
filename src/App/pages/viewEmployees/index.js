@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router";
 import { Box, Button, Flex, Header } from "../../components/styled";
-import Card from "./components/Card"
-import Content from "./styled/Content"
-import InfiniteScroller from "../../components/InfiniteScroller"
-import { getEmployees } from "../../../redux/global/selectors"
+import Card from "./components/Card";
+import Content from "./styled/Content";
+import InfiniteScroller from "../../components/InfiniteScroller";
+import { getEmployees } from "../../../redux/global/selectors";
 import { loadEmployees } from "../../../redux/employees/actionCreators";
-import { loadMoreEmp } from "./mocks/api"
-
-
+import { loadMoreEmp } from "./mocks/api";
 
 const ViewEmployees = () => {
   const history = useHistory();

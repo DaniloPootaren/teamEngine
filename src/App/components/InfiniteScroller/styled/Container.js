@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Container = styled.div`
    width: 100%;
    height: 100%;
@@ -8,8 +7,7 @@ const Container = styled.div`
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   overflow-y: auto;
-   
+   overflow-y: auto; 
 `;
 
 export default Container;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Dialog = styled.div`
   width: 100%;
   max-width: 30em;

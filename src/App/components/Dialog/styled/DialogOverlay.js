@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const DialogOverlay = styled.div`
   position: absolute;
   z-index: 1010;

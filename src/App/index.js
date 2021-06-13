@@ -3,7 +3,7 @@ import { HashRouter as Router } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import WebFont from "webfontloader";
 import { AppWrapper, GlobalStyle } from "../App/components/styled";
-import Routes from "../App/routes"
+import Routes from "../App/routes";
 
 WebFont.load({
   google: {

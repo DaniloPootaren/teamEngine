@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { Header } from "../../components/styled";
 import { saveNewEmployee } from "../../../redux/employees/actionCreators";
-import CreateEmployeeForm from "../../components/Forms/CreateEmployee"
+import CreateEmployeeForm from "../../components/Forms/CreateEmployee";
 
 const CreateEmployee = () => {
   const history = useHistory();
@@ -14,7 +14,6 @@ const CreateEmployee = () => {
     },
     [dispatch]
   );
-
   const handleBackButton = () => {
     history.goBack()
   }

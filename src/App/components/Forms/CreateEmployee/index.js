@@ -19,25 +19,23 @@ const CreateEmployee = (props) => {
     }
 
     return (
-        <>
-            <Formik
-                validationSchema={employeeValidationSchema}
-                onSubmit={handleSubmit}
-                initialValues={initialState ? initialState : defaultVal}
-            >
-                <Flex alignItems="center" justifyContent="center" height="100%">
-                    <Flex alignItems="left" direction="column" width="300px">
-                        <FormField name="firstName" placeholder="First name" />
-                        <FormField name="surname" placeholder="Surname" />
-                        <FormField name="email" placeholder="Email" />
-                        <FormField name="age" placeholder="Age" />
-                        <FormDropdown name="status" placeholder="-" />
-                        <FormField name="jobTitle" placeholder="JobTitle" />
-                        <FormButtons handleCancel={handleCancel} cancelLabel={cancelLabel} />
-                    </Flex>
+        <Formik
+            validationSchema={employeeValidationSchema}
+            onSubmit={handleSubmit}
+            initialValues={initialState ? initialState : defaultVal}
+        >
+            <Flex alignItems="center" justifyContent="center" height="100%">
+                <Flex alignItems="left" direction="column" width="300px">
+                    <FormField name="firstName" placeholder="First name" />
+                    <FormField name="surname" placeholder="Surname" />
+                    <FormField name="email" placeholder="Email" />
+                    <FormField name="age" placeholder="Age" />
+                    <FormDropdown name="status" placeholder="-" />
+                    <FormField name="jobTitle" placeholder="JobTitle" />
+                    <FormButtons handleCancel={handleCancel} cancelLabel={cancelLabel} />
                 </Flex>
-            </Formik>
-        </>
+            </Flex>
+        </Formik>
     );
 };
 

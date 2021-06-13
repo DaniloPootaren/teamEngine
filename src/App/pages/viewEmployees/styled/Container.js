@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import breakpoint from 'styled-components-breakpoint';
-import Flex from '../../../components/styled/Flex'
+import Flex from '../../../components/styled/Flex';
 import theme from "../../../components/styled/defaultTheme";
 
 const Container = styled(Flex)`

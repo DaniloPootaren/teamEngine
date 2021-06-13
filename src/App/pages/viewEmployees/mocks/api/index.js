@@ -1,8 +1,5 @@
 
-import data from "../data/records.json"
-
-
-
+import data from "../data/records.json";
 
 export const loadMoreEmp = (pageNumber, pageSize) => {
 

@@ -10,11 +10,8 @@ import { editEmployeeDetails, deleteEmployee } from "../../../../redux/employees
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Pill from "../styled/Pill";
-import YesNoDialog from "../../../components/YesNoDialog"
-import { firstLetterCapital, removeUnderScores } from "../../../utils/text"
-
-
-
+import YesNoDialog from "../../../components/YesNoDialog";
+import { firstLetterCapital, removeUnderScores } from "../../../utils/text";
 
 const Card = (props) => {
     // eslint-disable-next-line no-use-before-define
@@ -22,9 +19,7 @@ const Card = (props) => {
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const { employee } = props
     const fields = ['firstName', 'surname', 'email', 'age']
-
     const dispatch = useDispatch();
-
     const submitForm = useCallback(
         employee => {
             dispatch(editEmployeeDetails(employee));

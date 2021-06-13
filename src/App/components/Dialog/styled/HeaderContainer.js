@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-
-
 const HeaderContainer = styled.div`
   text-align: center;
   font-weight: 500;

@@ -13,9 +13,9 @@ const Select = styled.select`
   border-radius: 10px;
   transition: border-color 0.2s linear;
 
-option:first-child{
-  color: ${theme.colors.placeholder};
-}
+  option:first-child{
+    color: ${theme.colors.placeholder};
+  }
 
   &:focus {
     border-color: ${theme.colors.primary};
