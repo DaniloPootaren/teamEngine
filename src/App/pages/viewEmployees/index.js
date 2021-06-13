@@ -28,11 +28,6 @@ const ViewEmployees = () => {
 
   return (
     <>
-      <>
-        <Button data-cy="backButton" onClick={() => history.goBack()}>
-          Back
-          </Button>
-      </>
       <Header data-cy="header">View Employees</Header>
       <Content>
         <InfiniteScroller callback={() => loadMore()}>
@@ -41,7 +36,11 @@ const ViewEmployees = () => {
           </Box>
         </InfiniteScroller>
       </Content>
-
+      <Flex alignItems="center" justifyContent="center">
+        <Button data-cy="backButton" onClick={() => history.goBack()}>
+          Back
+          </Button>
+      </Flex>
     </>
   );
 };
